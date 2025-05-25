@@ -1,0 +1,32 @@
+main {
+  max-width: 600px;
+  width: 90%;
+}
+
+.title {
+  font-size: 3.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  color: hsl(0, 0%, 98%);
+}
+
+.notifica-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(120, 100%, 75%);
+  padding: 1rem;
+  margin-bottom: 3rem;
+  border-radius: 0.5rem;
+}
+
+.notifica-text {
+  color: #1a1a1a;
+  font-size: 1.6rem;
+}
+
+.remove-notifica {
+  color: #1a1a1a;
+  cursor: pointer;
+}

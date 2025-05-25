@@ -1,0 +1,18 @@
+<div class="todo-box" *ngIf="todosList.length !== 0; else emptyBlock">
+  <div class="elementoTodo" *ngFor="let todo of todosList">
+    <p
+      [ngClass]="{ completed: todo.completed, 'todo-text': true }"
+      (click)="updateCompleted(todo.id, !todo.completed)"
+    >
+      {{ todo.text }}
+    </p>
+    <fa-icon [icon]="faTrash" class="remove" (click)="rimuoviTodo(todo.id)">
+    </fa-icon>
+  </div>
+</div>
+
+<ng-template #emptyBlock>
+  <div class="todo-box">
+    <p class="empty">Nessun todo disponibile</p>
+  </div>
+</ng-template>

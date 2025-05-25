@@ -1,0 +1,8 @@
+<div class="todo-footer">
+  <ul class="todo-footer-menu">
+    <li (click)="filterTodos('all')" class="menu-item all">All</li>
+    <li (click)="filterTodos('active')" class="menu-item active">Active</li>
+    <li (click)="filterTodos('completed')" class="menu-item isCompleted">Completed</li>
+  </ul>
+  <p (click)="clearTodo()" class="clear-completed">Clear Completed</p>
+</div>

@@ -1,0 +1,43 @@
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  background-color: hsl(235, 24%, 19%);
+}
+
+.todo-footer-menu {
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.total-items,
+.clear-completed,
+.menu-item {
+  color: hsl(234, 11%, 52%);
+}
+
+.total-items,
+.clear-completed {
+  font-size: 1.6rem;
+}
+
+.clear-completed,
+.menu-item {
+  cursor: pointer;
+}
+
+.clear-completed:hover,
+.menu-item:hover {
+  color: hsl(0, 0%, 98%);
+}
+
+.menu-item {
+  font-size: 1.6rem;
+  padding: 0.5rem;
+}
