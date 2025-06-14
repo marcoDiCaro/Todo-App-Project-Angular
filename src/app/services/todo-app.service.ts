@@ -39,7 +39,7 @@ export class TodoAppService {
     const todoObj = new Todo(id, input);
     this.todosList.push(todoObj);
     localStorage.setItem('todos', JSON.stringify(this.todosList)); // Salvo dati nel localStorage (usando JSON)
-  };
+  }
 
   updateTodos(id: number, isCompleted: boolean) {
     const todo = this.todosList.find((todo) => todo.id === id);
@@ -48,13 +48,13 @@ export class TodoAppService {
     }
     //console.log(todo);
     localStorage.setItem('todos', JSON.stringify(this.todosList)); // Salvo dati nel localStorage (usando JSON)
-  };
+  }
 
   clearCompleted() {
     const listaFiltered = this.todosList.filter((todo) => !todo.completed);
     this.todosList = listaFiltered;
     localStorage.setItem('todos', JSON.stringify(this.todosList)); // Salvo dati nel localStorage (usando JSON)
-  };
+  }
 
   rimuoviTodo(id: number) {
     const index = this.todosList.findIndex((todo) => todo.id === id);
@@ -62,5 +62,14 @@ export class TodoAppService {
       this.todosList.splice(index, 1);
     }
     localStorage.setItem('todos', JSON.stringify(this.todosList)); // Salvo dati nel localStorage (usando JSON)
-  };
+  }
+
+  modificaTestoTodo(input: string, id: number) {
+    const todo = this.todosList.find((todo) => todo.id === id);
+    if (todo) {
+      todo.text = input;
+    }
+    //console.log(todo);
+    localStorage.setItem('todos', JSON.stringify(this.todosList)); // Salvo dati nel localStorage (usando JSON)
+  }
 }

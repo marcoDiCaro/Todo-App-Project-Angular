@@ -18,6 +18,9 @@ export class TodoBoxComponent implements OnInit {
 
   faTrash = faTrash; //FontAwesome Icon
 
+  update: boolean = false;
+  todoIdModifica: number | any;
+
   @Input() todosList: Todo[] | any;
 
   constructor(private todoAppService: TodoAppService) {}
@@ -36,12 +39,27 @@ export class TodoBoxComponent implements OnInit {
 
   rimuoviTodo(id: number) {
     this.todoAppService.rimuoviTodo(id);
-    
+
     const notificaObj: Notifica = {
       notifica: true,
-      text: 'todo rimosso'
-    }
+      text: 'todo rimosso',
+    };
 
     this.notificaEvent.emit(notificaObj);
   }
+
+  onDoubleClick(id: number) {
+    // console.log('Button was double-clicked!');
+    this.update = true;
+    this.todoIdModifica = id;
+  }
+
+  modificaTodo(event: Event, id: number) {
+    const input: string = (event.target as HTMLInputElement).value;
+    console.log(input);
+    this.todoAppService.modificaTestoTodo(input, id);
+    // (event.target as HTMLInputElement).value = '';
+    this.update = false;
+  }
+
 }

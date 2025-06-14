@@ -1,0 +1,58 @@
+<app-notifica [notificaObj]="notifica"></app-notifica>
+<div class="auth-form">
+  <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+    <h2 class="form-title">Registrati / <a class="form-title link" [routerLink]="['/login']">Login</a></h2>
+    <div class="container">
+      <div class="input-container">
+        <label class="label-form" for="username">Username</label>
+        <input
+          type="text"
+          id="username"
+          class="input-form"
+          name="username"
+          [(ngModel)]="formData.username"
+          required
+          #username="ngModel"
+        />
+        <div *ngIf="username.invalid && username.touched" class="error">
+          Username obbligatorio
+        </div>
+      </div>
+      <div class="input-container">
+        <label class="label-form" for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="input-form"
+          name="password"
+          [(ngModel)]="formData.password"
+          required
+          minlength="6"
+          #password="ngModel"
+        />
+        <div *ngIf="password.invalid && password.touched" class="error">
+          <div *ngIf="password.errors?.['required']">Password obbligatoria</div>
+          <div *ngIf="password.errors?.['minlength']">
+            Minimo 6 caratteri richiesti
+          </div>
+        </div>
+      </div>
+    </div>
+    <label class="label-form" for="email">Email Address</label>
+    <input
+      type="email"
+      id="email"
+      class="input-form email-address"
+      name="email"
+      [(ngModel)]="formData.email"
+      required
+      email
+      #email="ngModel"
+    />
+    <div *ngIf="email.invalid && email.touched" class="error">
+      <div *ngIf="email.errors?.['required']">Email obbligatoria</div>
+      <div *ngIf="email.errors?.['email']">Email non valida</div>
+    </div>
+    <button class="submit-btn" type="submit">Submit</button>
+  </form>
+</div>

@@ -1,10 +1,1 @@
-<main>
-  <div id="notificaContenitore" class="notifica-container" *ngIf="notifica">
-    <p class="notifica-text">{{notificaText}}</p>
-    <fa-icon [icon]="faXmark" class="remove-notifica" (click)="rimuoviNotifica()"></fa-icon>
-  </div>
-  <h1 class="title">Todo</h1>
-  <app-input-todo (notificaEvent)="aggiungiNotifica($event)"></app-input-todo>
-  <app-todo-box [todosList]="listaTodos" (notificaEvent)="aggiungiNotifica($event)"></app-todo-box>
-  <app-todo-footer (filterEvent)="mostraTodos($event)"></app-todo-footer>
-</main>
+<router-outlet></router-outlet>

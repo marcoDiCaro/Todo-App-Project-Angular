@@ -7,12 +7,17 @@
 
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 body {
-  background-color: hsl(235, 21%, 11%);
+  /* background-color: hsl(235, 21%, 11%);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh; */
+  background-color: hsl(235, 21%, 11%);
+  font-size: 1.6rem;
+  font-family: Karla;
+  height: 100%;
 }

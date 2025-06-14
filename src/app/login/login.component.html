@@ -1,0 +1,42 @@
+<app-notifica [notificaObj]="notifica"></app-notifica>
+<form class="auth-form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+  <h2 class="form-title">Area Login</h2>
+  <div class="container">
+    <div class="input-container">
+      <label class="label-form" for="username">Username</label>
+      <input
+        type="text"
+        id="username"
+        class="input-form"
+        name="username"
+        [(ngModel)]="formData.username"
+        required
+        #username="ngModel"
+      />
+      <div *ngIf="username.invalid && username.touched" class="error">
+        <div *ngIf="username.errors?.['required']">Username obbligatorio</div>
+      </div>
+    </div>
+    <div class="input-container">
+      <label class="label-form" for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        class="input-form"
+        name="password"
+        [(ngModel)]="formData.password"
+        required
+        minlength="6"
+        #password="ngModel"
+      />
+      <div *ngIf="password.invalid && password.touched" class="error">
+        <div *ngIf="password.errors?.['required']">Password obbligatoria</div>
+        <div *ngIf="password.errors?.['minlength']">
+          Minimo 6 caratteri richiesti
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="submit-btn" type="submit">Submit</button>
+</form>
+

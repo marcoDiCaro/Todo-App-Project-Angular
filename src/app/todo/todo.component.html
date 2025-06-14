@@ -1,0 +1,15 @@
+<main>
+  <app-notifica [notificaObj]="notifica"></app-notifica>
+
+  <div class="header">
+    <h1 class="title">{{ title }}</h1>
+    <app-input-todo (notificaEvent)="aggiungiNotifica($event)"></app-input-todo>
+  </div>
+
+  <app-todo-box
+    [todosList]="listaTodos"
+    (notificaEvent)="aggiungiNotifica($event)"
+  ></app-todo-box>
+
+  <app-todo-footer (filterEvent)="mostraTodos($event)"></app-todo-footer>
+</main>

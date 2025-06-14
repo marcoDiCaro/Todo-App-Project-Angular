@@ -1,15 +1,17 @@
 .todo-box {
   border-radius: 0.5rem;
   background-color: hsl(235, 24%, 19%);
+  padding: 2rem;
 }
 
 .todo-text {
   font-size: 1.6rem;
-  text-align: center;
-  padding: 2rem 1rem;
+  /* text-align: center; */
+  /* padding: 2rem 1rem; */
   cursor: pointer;
-  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
+  /* border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5); */
   color: hsl(0, 0%, 98%);
+  width: 20vw;
 }
 
 .todo-text:hover {
@@ -30,8 +32,9 @@
 .elementoTodo {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .remove {
@@ -42,4 +45,49 @@
 
 .remove:hover {
   color: #ff0000;
+}
+
+@media (max-width: 768px) {
+  .todo-text {
+    width: 60vw;
+    font-size: 1.4rem;
+  }
+
+  .elementoTodo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .remove {
+    align-self: flex-end;
+    font-size: 1.4rem;
+  }
+
+  .todo-box {
+    padding: 1.5rem;
+  }
+
+  .empty {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .todo-text {
+    width: 80vw;
+    font-size: 1.2rem;
+  }
+
+  .remove {
+    font-size: 1.2rem;
+  }
+
+  .todo-box {
+    padding: 1rem;
+  }
+
+  .empty {
+    font-size: 1.4rem;
+  }
 }

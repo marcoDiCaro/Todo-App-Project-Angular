@@ -1,0 +1,9 @@
+<div
+  id="notificaContenitore"
+  class="notifica-container"
+  *ngIf="notificaObj.statoNotifica"
+  [ngClass]="notificaObj.error ? 'error' : '' "
+>
+  <p class="notifica-text">{{ notificaObj.messaggio }}</p>
+  <fa-icon [icon]="faXmark" class="remove-notifica" (click)="rimuoviNotifica()"></fa-icon>
+</div>

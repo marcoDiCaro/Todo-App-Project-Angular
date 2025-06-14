@@ -1,0 +1,68 @@
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Occupare tutta la finestra */
+  padding: 2rem;
+}
+
+.title {
+  font-size: 3.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+  color: hsl(0, 0%, 98%);
+}
+
+/* Blocco header fisso */
+.title,
+app-input-todo {
+  position: relative;
+  z-index: 2;
+}
+
+/* Wrapper per titolo + input */
+.header {
+  position: sticky;
+  top: 0;
+  padding: 2rem 1rem 1rem 1rem; /* ↑ più padding sopra */
+  z-index: 10;
+}
+
+/* Parte centrale scrollabile */
+app-todo-box {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* Footer fisso */
+app-todo-footer {
+  position: sticky;
+  bottom: 0;
+  padding: 1rem;
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  main {
+    width: 80vw;
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 2.4rem;
+    letter-spacing: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    width: 90vw;
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+  }
+}
