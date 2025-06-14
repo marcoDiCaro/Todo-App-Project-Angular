@@ -7,8 +7,10 @@ Una semplice applicazione Todo realizzata in **Angular**, con salvataggio dei da
 
 ## 🚀 Funzionalità
 
+- Autenticazione
 - Aggiungi nuovi todo con **Invio**
 - Marca un todo come **completato** (clic sul testo)
+- Modifica testo todo (doppio clic sul testo)
 - **Rimuovi** un singolo todo (icona del cestino)
 - Filtra tra:
   - ✅ **Tutti**
